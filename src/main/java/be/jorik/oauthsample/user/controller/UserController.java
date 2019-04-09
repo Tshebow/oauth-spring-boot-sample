@@ -22,7 +22,7 @@ public class UserController {
 	}
 
 	@RequestMapping(value = "user/token")
-	public String registerBattleNetTokenForWarcraft(HttpServletRequest request, @RequestParam("state") String state, @RequestParam("code") String code) {
+	public String getOAuthTokenAfterLogin(HttpServletRequest request, @RequestParam("state") String state, @RequestParam("code") String code) {
 		battlenetFacade.getOAuthTokenAfterLogin(request, state, code);
 		return "redirect: /home";
 	}
